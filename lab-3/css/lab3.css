@@ -1,0 +1,87 @@
+@charset "utf-8";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+/* Box-sizing reset (https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/) */
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  font-family: "Open Sans", sans-serif;
+}
+#container {
+  width: 80%;
+  margin: 0 auto;
+}
+[role="tab"] {
+  display: flex;
+  font-weight: bolder;
+  padding: 5px;
+}
+[role="tablist"] {
+  display: flex;
+  flex-direction: row;
+}
+/* Hide all paragraphs within tab panels by default */
+/* Hide all tab panels by default */
+.tabs div[role="tabpanel"] {
+  display: none;
+}
+
+/* Show tab panel when its corresponding tab is active */
+.tabs li[role="tab"]:hover,
+.tabs li[role="tab"]:focus {
+  /* You may adjust this style according to your design */
+  background-color: lightgray;
+  cursor: pointer;
+}
+
+/* Show the corresponding tab panel when its tab is clicked */
+.tabs li[role="tab"]:hover a,
+.tabs li[role="tab"]:focus a {
+  color: black;
+}
+/* Initially selected tab */
+.tabs li.selected {
+  background-color: lightgray;
+}
+
+/* Animation for tab panel */
+.tabs div[role="tabpanel"] {
+  display: none;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Rounded corner border for selected tab */
+#tabpanel1 {
+  border: 2px solid;
+  padding: 10px;
+}
+#tabpanel2 {
+  border: 2px solid;
+  padding: 10px;
+}
+#tabpanel3 {
+  border: 2px solid;
+  padding: 10px;
+}
+li {
+  border-right: 2px solid;
+  border-left: 2px solid;
+  border-top: 2px solid;
+}
